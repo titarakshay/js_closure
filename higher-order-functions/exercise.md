@@ -1,11 +1,17 @@
 # Callbacks and Higher-Order Functions
-
+```js
 ## Challenge 1
 Create a function `addTwo` that accepts one input and adds 2 to it.
-
-
+ function addTwo(a){
+   return a+2;
+ }
+addTwo(0);
 ## Challenge 2
 Create a function `addS` that accepts one input and adds an "s" to it.
+function addS(a){
+   return a+"s";
+ }
+addS(0);
 
 ## Challenge 3
 Create a function called map that takes two inputs:
@@ -15,6 +21,18 @@ Create a function called map that takes two inputs:
 Have `map` return a new array filled with numbers that are the result of using the 'callback' function on each element of the input array.
 
 ```js
+function multiplyByTwo(n){;
+  return n*2;
+}
+function map(arr,multiplyByTwo){
+   var array=[];
+   for(let i=0;i<arr.length;i++){
+     array.push(multiplyByTwo(arr[i]));
+   }
+   return array
+}
+
+
 map([1,2,3,4,5], multiplyByTwo); //-> [2,4,6,8,10]
 multiplyByTwo(1); //-> 2
 multiplyByTwo(2); //-> 4
@@ -24,6 +42,19 @@ multiplyByTwo(2); //-> 4
 The function `forEach` takes an array and a callback, and runs the callback on each element of the array. `forEach` does not return anything.
 
 ```js
+
+function char(char){
+  return String(char);
+}
+function forEach(letters,char){
+  var alphabet="";
+  for (let i=0;i<letters.length;i++){
+    alphabet +=char(letters[i])
+  }
+  return alphabet;
+}
+
+function forEach(letters,char)
 var alphabet = '';
 var letters = ['a', 'b', 'c', 'd'];
 forEach(letters, function(char) {
@@ -34,12 +65,38 @@ console.log(alphabet);   //prints 'abcd'
 
 ## Extension 1
 In the first part of the extension, you're going to rebuild `map` as `mapWith`. This time you're going to use `forEach` inside of `mapWith` instead of using a for loop.
+```js
+function multiplyByTwo(n){;
+  return n*2;
+}
 
+
+function mapWith([1,2,3,4,5],multiplyByTwo){
+  var array=[]
+  arr.forEach(ele=> {
+    array.push(multiplyByTwo(ele))
+
+  });
+  return array;
 
 ## Extension 2
 The function reduce takes an array and reduces the elements to a single value. For example it can sum all the numbers, multiply them, or any operation that you can put into a function.
 
 ```js
+
+
+function reduce(nums,add,0){
+  var current=0;
+  for(let element of nums){
+    current=add(current,element)
+  }
+  return current
+}
+
+
+
+
+
 var nums = [4, 1, 3];
 var add = function(a, b) { return a + b; }
 reduce(nums, add, 0);   //-> 8
@@ -59,3 +116,5 @@ Construct a function `objOfMatches` that accepts two arrays and a callback. `obj
 
 ## Extension 6
 Construct a function `multiMap` that will accept two arrays: an array of values and an array of callbacks. `multiMap` will return an object whose keys match the elements in the array of values. The corresponding values that are assigned to the keys will be arrays consisting of outputs from the array of callbacks, where the input to each callback is the key.
+
+```

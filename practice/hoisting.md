@@ -6,18 +6,20 @@
 console.log(animal);
 var animal = "monkey";
 // Output or Error Message
+animal ="monkey";
 ```
-
 ```js
 console.log(animal);
 let animal = "monkey";
 // Output or Error Message
+animal cannot called before initialization 
 ```
 
 ```js
 console.log(animal);
 const animal = "monkey";
 // Output or Error Message
+animal cannot called before initialization 
 ```
 
 ```js
@@ -26,6 +28,7 @@ function sayHello(msg) {
 }
 sayHello("Hey Everyone");
 // Output or Error Message
+alert("Hey Everyone");
 ```
 
 ```js
@@ -34,6 +37,7 @@ function sayHello(msg) {
   alert(msg);
 }
 // Output or Error Message
+alert("Hey Everyone");
 ```
 
 ```js
@@ -42,6 +46,8 @@ var sayHello = msg => {
   alert(msg);
 };
 // Output or Error Message
+alert("Hey Everyone");
+
 ```
 
 ```js
@@ -49,4 +55,5 @@ sayHello("Hey Everyone");
 let sayHello = msg => {
   alert(msg);
 };
+error sayHello cannot access before initialization 
 ```
